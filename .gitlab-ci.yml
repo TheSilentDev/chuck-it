@@ -55,7 +55,8 @@ deploy_client_prod:
     - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
   environment:
     name: prod
-  dependencies: []
+  dependencies:
+    - install_client
   only:
     refs:
       - master
@@ -79,6 +80,8 @@ deploy_server_prod:
     - cd server
     - yarn
     - serverless deploy
+  dependencies:
+    - install_server
   environment:
     name: server
   only:
