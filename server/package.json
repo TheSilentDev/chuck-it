@@ -1,21 +1,45 @@
 {
-	"name": "server",
-	"version": "1.0.0",
-	"description": "",
-	"main": "graphql.ts",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"apollo-datasource-rest": "^0.9.3",
-		"apollo-server-lambda": "^2.15.1"
-	},
-	"devDependencies": {
-		"serverless-offline": "^6.3.2",
-		"serverless-plugin-typescript": "^1.1.9",
-		"typescript": "^3.9.5"
-	}
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "graphql.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .ts,.tsx .",
+    "format": "npm run prettier -- --write",
+    "lint-fix": "eslint --fix --ext .ts,.tsx .",
+    "prettier": "prettier \"**/*.+(js|jsx|json|css|scss|ts|tsx)\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "apollo-datasource-rest": "^0.9.3",
+    "apollo-server-lambda": "^2.15.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "serverless-offline": "^6.3.2",
+    "serverless-plugin-typescript": "^1.1.9",
+    "typescript": "^3.9.5"
+  }
 }
