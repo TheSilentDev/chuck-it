@@ -1,50 +1,50 @@
 import { createGlobalStyle } from 'styled-components';
 
 export interface IPalette {
-	[key: string]: string;
-	primary: string;
-	secondary: string;
-	cardShadow: string;
-	textPrimary: string;
-	textSecondary: string;
-	light: string;
-	dark: string;
+  [key: string]: string;
+  primary: string;
+  secondary: string;
+  cardShadow: string;
+  textPrimary: string;
+  textSecondary: string;
+  light: string;
+  dark: string;
 }
 
 export interface ITheme {
-	theme: {
-		breakpoints: {
-			xsmall: string;
-			small: string;
-			medium: string;
-			large: string;
-			xLarge: string;
-		};
-		fontFamily: string;
-		fontSize: string[];
-		palette: IPalette;
-	};
+  theme: {
+    breakpoints: {
+      xsmall: string;
+      small: string;
+      medium: string;
+      large: string;
+      xLarge: string;
+    };
+    fontFamily: string;
+    fontSize: string[];
+    palette: IPalette;
+  };
 }
 
 export const theme = {
-	breakpoints: {
-		xsmall: '425px',
-		small: '768px',
-		medium: '1024px',
-		large: '1440px',
-		xLarge: '1920px',
-	},
-	fontFamily: 'Poppins',
-	fontSize: ['14px', '16px', '18px', '20px', '22px'],
-	palette: {
-		primary: '#FFF',
-		secondary: '#512DA8',
-		cardShadow: '#CACACA',
-		textPrimary: '#FFF',
-		textSecondary: '#7c7d87',
-		light: '#FFFFFF',
-		dark: 'rgba(0,0,0,0.1)',
-	},
+  breakpoints: {
+    xsmall: '425px',
+    small: '768px',
+    medium: '1024px',
+    large: '1440px',
+    xLarge: '1920px',
+  },
+  fontFamily: 'Poppins',
+  fontSize: ['14px', '16px', '18px', '20px', '22px'],
+  palette: {
+    primary: '#FFF',
+    secondary: '#512DA8',
+    cardShadow: '#CACACA',
+    textPrimary: '#FFF',
+    textSecondary: '#7c7d87',
+    light: '#FFFFFF',
+    dark: 'rgba(0,0,0,0.1)',
+  },
 };
 
 export default createGlobalStyle`

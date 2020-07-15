@@ -5,14 +5,14 @@ import Joke from './Joke';
 import { Wrapper } from './styles';
 
 const Chuck = () => {
-	const { icon_url, joke, loading, getJokeByCategory } = useJoke();
+  const { icon_url, joke, loading, getJokeByCategory } = useJoke();
 
-	return (
-		<Wrapper column>
-			<Joke joke={joke} loading={loading} icon_url={icon_url} />
-			<Categories key="categories" onClick={getJokeByCategory} />
-		</Wrapper>
-	);
+  return (
+    <Wrapper column>
+      <Joke joke={joke} loading={loading} icon_url={icon_url} />
+      <Categories key="categories" onClick={getJokeByCategory} />
+    </Wrapper>
+  );
 };
 
 export default Chuck;
