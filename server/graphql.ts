@@ -1,20 +1,18 @@
 import { ApolloServer, gql } from 'apollo-server-lambda';
-
-const typeDefs = gql`
-	type Query {
-		hello: String
-	}
-`;
-
-const resolvers = {
-	Query: {
-		hello: () => 'Hello World',
-	},
-};
+import {
+	chuckTypeDefs,
+	chuckResolvers,
+	ChuckNorrisAPI,
+} from './services/chuck-jokes';
 
 const server = new ApolloServer({
-	typeDefs,
-	resolvers,
+	typeDefs: [chuckTypeDefs],
+	resolvers: [chuckResolvers],
+	dataSources: () => {
+		return {
+			chuckNorrisAPI: new ChuckNorrisAPI(),
+		};
+	},
 });
 
 export const graphqlHandler = server.createHandler({
