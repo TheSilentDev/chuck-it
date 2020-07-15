@@ -80,7 +80,7 @@ deploy_server_prod:
     - yarn
     - serverless deploy
   environment:
-    name: api
+    name: server
   only:
     refs:
       - master
