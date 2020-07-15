@@ -7,7 +7,7 @@ import { Chuck } from '../Chuck';
 import JokeProvider from '../../contexts/joke.context';
 
 const client = new ApolloClient({
-	uri: '/dev/graphql',
+	uri: 'https://jw7no4fsz5.execute-api.us-east-1.amazonaws.com/dev/graphql',
 	cache: new InMemoryCache(),
 });
 
